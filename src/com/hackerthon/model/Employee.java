@@ -11,6 +11,18 @@ public class Employee {
 	private String department;
 	private String designation;
 
+	// static variable single_instance of type Singleton
+	private static Employee employee = null;
+
+	// static method to create instance of Employee class
+	public static Employee getInstance()
+	{
+		if (employee == null)
+			employee = new Employee();
+
+		return employee;
+	}
+
 	public String getEmployeeId() {
 		return employeeId;
 	}

@@ -2,6 +2,7 @@ package com.hackerthon.service;
 
 import java.sql.*;
 
+import com.hackerthon.common.CommonConstants;
 import com.hackerthon.model.Employee;
 import com.hackerthon.common.CommonUtil;
 import com.hackerthon.common.QueryUtil;
@@ -27,9 +28,9 @@ public class EmployeeService extends CommonUtil {
 	public EmployeeService() {
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
-					properties.getProperty("password"));
+			Class.forName(properties.getProperty(CommonConstants.DRIVER_NAME));
+			connection = DriverManager.getConnection(properties.getProperty(properties.getProperty(CommonConstants.URL)), properties.getProperty(CommonConstants.USERNAME),
+					properties.getProperty(CommonConstants.PASSWORD));
 		} catch (ClassNotFoundException e ) {
 			log.log(Level.SEVERE, e.getMessage());
 		} catch ( SQLException e){
@@ -41,18 +42,18 @@ public class EmployeeService extends CommonUtil {
 
 		try {
 
-			for (Map<String, String> xPath: TransformUtil.readXmlXPaths()) {
+			for (Map<String, String> employeeList: TransformUtil.readXmlXPaths()) {
 
 				Employee employee = new Employee();
 
-				employee.setEmployeeId(xPath.get("XpathEmployeeIDKey"));
-				employee.setFullName(xPath.get("XpathEmployeeNameKey"));
-				employee.setAddress(xPath.get("XpathEmployeeAddressKey"));
-				employee.setFacultyName(xPath.get("XpathFacultyNameKey"));
-				employee.setDepartment(xPath.get("XpathDepartmentKey"));
-				employee.setDesignation(xPath.get("XpathDesignationKey"));
+				employee.setEmployeeId(employeeList.get(CommonConstants.XPATH_EMP_ID));
+				employee.setFullName(employeeList.get(CommonConstants.XPATH_EMP_NAME));
+				employee.setAddress(employeeList.get(CommonConstants.XPATH_EMP_ADDRESS));
+				employee.setFacultyName(employeeList.get(CommonConstants.XPATH_EMP_FACULTY));
+				employee.setDepartment(employeeList.get(CommonConstants.XPATH_EMP_DEPARTMENT));
+				employee.setDesignation(employeeList.get(CommonConstants.XPATH_EMP_DESIGNATION));
 
-				employeeList.add(employee);
+				this.employeeList.add(employee);
 				log.info(employee.toString() + "\n");
 			}
 		} catch (ClassCastException e) {
