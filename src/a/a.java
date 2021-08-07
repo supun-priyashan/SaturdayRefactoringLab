@@ -1,23 +1,16 @@
 package a;
 
-import org.xml.sax.SAXException;
 import java.sql.Connection;
-import java.util.logging.Logger;
 import java.sql.DriverManager;
-import javax.xml.parsers.ParserConfigurationException;
 import java.sql.PreparedStatement;
-import javax.xml.xpath.XPathExpressionException;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
 import java.sql.Statement;
-import java.io.IOException;
 
 import b.b;
-import c.c1;
-import c.c2;
-import c.c3;
+import com.hackerthon.common.c1;
+import com.hackerthon.common.c2;
+import com.hackerthon.common.c3;
 
 import java.util.ArrayList;
 import java.util.Map;

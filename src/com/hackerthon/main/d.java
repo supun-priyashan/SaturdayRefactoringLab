@@ -1,11 +1,7 @@
 package com.hackerthon.main;
 
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-
 import a.a;
-import c.c3;
+import com.hackerthon.common.c3;
 
 public class d {
 

@@ -1,8 +1,5 @@
-package c;
+package com.hackerthon.common;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.io.IOException;
 import java.util.Properties;
 
 
