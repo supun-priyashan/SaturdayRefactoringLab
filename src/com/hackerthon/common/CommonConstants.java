@@ -14,7 +14,7 @@ public class CommonConstants {
 	/** Constant for user name key of MySQL database in config.properties */
 	public static final String USERNAME = "username";
 
-	/** Constant for password key of MySQL database in config.properties */
+	/** Constant for password key of MySQL database in config.properties  */
 	public static final String PASSWORD = "password";
 
 
