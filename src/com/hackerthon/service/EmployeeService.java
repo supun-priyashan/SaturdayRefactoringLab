@@ -97,7 +97,7 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
-	public void getEmployeByID(String employeeID) {
+	public void getEmployeeByID(String employeeID) {
 
 		Employee employee = new Employee();
 		try {
