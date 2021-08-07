@@ -4,7 +4,7 @@
  */
 package com.hackerthon.model;
 
-
+//Employee class created
 public class Employee {
 
 	private String employeeId;
@@ -26,9 +26,12 @@ public class Employee {
 		return employee;
 	}
 
+	//implementing getters and setters
+
 	public String getEmployeeId() {
 		return employeeId;
 	}
+
 
 	public void setEmployeeId(String employeeID) {
 		employeeId = employeeID;
