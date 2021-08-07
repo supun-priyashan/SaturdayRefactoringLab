@@ -1,7 +1,7 @@
 package com.hackerthon.main;
 /**
  * author - 2021S2_REG_WE_64
- *
+ * Main class
  */
 
 import com.hackerthon.service.EmployeeService;

@@ -1,7 +1,4 @@
-/**
- * author - 2021S2_REG_WE_64
- *
- */
+
 package com.hackerthon.service;
 
 /**
@@ -90,7 +87,7 @@ public class EmployeeService extends CommonUtil {
 	}
 
 	/**
-	 *
+	 * create employees method
 	 */
 	public void createEmployeeTable() {
 		try {
@@ -104,6 +101,9 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
+	/**
+	 * add employees method
+	 */
 	public void addEmployees() {
 		try {
 			preparedStatement = connection.prepareStatement(QueryUtil.queryByID("q3"));
@@ -127,6 +127,10 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
+	/**
+	 *
+	 * @param employeeID
+	 */
 	public void getEmployeeByID(String employeeID) {
 
 		Employee employee = new Employee();
@@ -147,6 +151,10 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
+	/**
+	 *
+	 * @param eid
+	 */
 	public void employeeDelete(String eid) {
 
 		try {
@@ -160,6 +168,9 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
+	/**
+	 * display employees
+	 */
 	public void displayEmployees() {
 
 		ArrayList<Employee> employeeList = new ArrayList<Employee>();
@@ -179,6 +190,12 @@ public class EmployeeService extends CommonUtil {
 		employeeOutput(employeeList);
 	}
 
+	/**
+	 *
+	 * @param resultSet
+	 * @param employee
+	 * @throws SQLException
+	 */
 	private void setEmployee(ResultSet resultSet, Employee employee) throws SQLException {
 		employee.setEmployeeId(resultSet.getString(1));
 		employee.setFullName(resultSet.getString(2));
@@ -188,6 +205,10 @@ public class EmployeeService extends CommonUtil {
 		employee.setDesignation(resultSet.getString(6));
 	}
 
+	/**
+	 *
+	 * @param employeeArrayList
+	 */
 	public void employeeOutput(ArrayList<Employee> employeeArrayList){
 		
 		System.out.println("Employee ID" + "\t\t" + "Full Name" + "\t\t" + "Address" + "\t\t" + "Faculty Name" + "\t\t"

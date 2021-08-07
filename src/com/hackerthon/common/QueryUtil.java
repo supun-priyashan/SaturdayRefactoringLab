@@ -10,7 +10,13 @@ import org.w3c.dom.Element;
  *
  */
 public class QueryUtil extends CommonUtil {
-	
+
+	/**
+	 *
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
 	public static String queryByID(String id) throws Exception {
 
 		NodeList nodeList;

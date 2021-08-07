@@ -26,6 +26,10 @@ public class TransformUtil extends CommonUtil {
 
 	private static Map<String, String> xpathOutputMap = null;
 
+	/**
+	 *
+	 * @throws Exception
+	 */
 	public static void requestTransform() throws Exception {
 
 		Source xmlInput = new StreamSource(new File(CommonConstants.EMPLOYEE_REQUEST));
@@ -35,6 +39,11 @@ public class TransformUtil extends CommonUtil {
 
 	}
 
+	/**
+	 *
+	 * @return
+	 * @throws Exception
+	 */
 	public static ArrayList<Map<String, String>> readXmlXPaths() throws Exception {
 
 		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder()
