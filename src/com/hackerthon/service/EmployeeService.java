@@ -8,14 +8,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import com.hackerthon.model.Employee;
-import com.hackerthon.common.c1;
+import com.hackerthon.common.CommonUtil;
 import com.hackerthon.common.c2;
 import com.hackerthon.common.c3;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public class EmployeeService extends c1 {
+public class EmployeeService extends CommonUtil {
 
 	private final ArrayList<Employee> el = new ArrayList<Employee>();
 
