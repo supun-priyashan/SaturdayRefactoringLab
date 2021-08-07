@@ -1,20 +1,16 @@
 package com.hackerthon.main;
 
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactoryConfigurationError;
+import com.hackerthon.service.EmployeeService;
+import com.hackerthon.common.c3;
 
-import a.a;
-import c.c3;
-
-public class d {
+public class Main {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		a employeeService = new a();
+		EmployeeService employeeService = new EmployeeService();
 		try {
 			c3.rEQUESTtRANSFORM();
 			employeeService.EMPLOEESFROMXML();
