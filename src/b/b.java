@@ -41,8 +41,8 @@ public class b {
 	public String getDesignation() {
 		return designation;
 	}
-	public void dESIGNATION(String designation) {
-		dESIGNATION = designation;
+	public void designation(String designation) {
+		designation = designation;
 	}
 	@Override
 	public String toString() {
