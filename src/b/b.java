@@ -47,8 +47,8 @@ public class b {
 	@Override
 	public String toString() {
 		
-		return "Employee ID = " + iDeMPLOYEE + "\n" + "FullName = " + nAMEfULL + "\n" + "Address = " + aDDRESS + "\n"
-				+ "Faculty Name = " + fACULTYnAME + "\n" + "Department = " + dEPARTMENT + "\n" + "Designation = "
-				+ dESIGNATION;
+		return "Employee ID = " + employeeID + "\n" + "FullName = " + fullName + "\n" + "Address = " + address + "\n"
+				+ "Faculty Name = " + facultyName + "\n" + "Department = " + department + "\n" + "Designation = "
+				+ designation;
 	}
 }
