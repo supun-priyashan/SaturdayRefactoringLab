@@ -14,12 +14,12 @@ public class QueryUtil extends CommonUtil {
 
 		try {
 			nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-					.parse(new File("src/e/EmployeeQuery.xml"))
-					.getElementsByTagName("query");
+					.parse(new File(CommonConstants.XML_PATH))
+					.getElementsByTagName(CommonConstants.QUERY);
 
 			for (int x = 0; x < nodeList.getLength(); x++) {
 				element = (Element) nodeList.item(x);
-				if (element.getAttribute("id").equals(id))
+				if (element.getAttribute(CommonConstants.ID).equals(id))
 					break;
 			}
 		}
