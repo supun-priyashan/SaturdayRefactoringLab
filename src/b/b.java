@@ -2,14 +2,14 @@ package b;
 
 public class b {
 
-	public String iDeMPLOYEE;
-	public String nAMEfULL;
-	public String aDDRESS;
-	public String fACULTYnAME;
-	public String dEPARTMENT;
-	public String dESIGNATION;
-	public String EMPLOYEEiDgET() {
-		return iDeMPLOYEE;
+	public String employeeID;
+	public String fullName;
+	public String address;
+	public String facultyName;
+	public String department;
+	public String designation;
+	public String getEmployeeID() {
+		return employeeID;
 	}
 	public void eMPLOYEEiD(String employeeID) {
 		iDeMPLOYEE = employeeID;
