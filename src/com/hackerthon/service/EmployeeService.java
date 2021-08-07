@@ -37,9 +37,9 @@ public class EmployeeService extends CommonUtil {
 	public void EMPLOEESFROMXML() {
 
 		try {
-			int s = TransformUtil.XMLXPATHS().size();
+			int s = TransformUtil.readXmlXPaths().size();
 			for (int i = 0; i < s; i++) {
-				Map<String, String> l = TransformUtil.XMLXPATHS().get(i);
+				Map<String, String> l = TransformUtil.readXmlXPaths().get(i);
 				Employee EMPLOYEE = new Employee();
 				EMPLOYEE.setEmployeeId(l.get("XpathEmployeeIDKey"));
 				EMPLOYEE.setFullName(l.get("XpathEmployeeNameKey"));
