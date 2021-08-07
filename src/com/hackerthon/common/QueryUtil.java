@@ -5,6 +5,10 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 
+/**
+ * author - 2021S2_REG_WE_64
+ *
+ */
 public class QueryUtil extends CommonUtil {
 	
 	public static String queryByID(String id) throws Exception {

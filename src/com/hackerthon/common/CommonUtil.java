@@ -1,3 +1,7 @@
+/**
+ * author - 2021S2_REG_WE_64
+ *
+ */
 package com.hackerthon.common;
 
 import java.util.Properties;

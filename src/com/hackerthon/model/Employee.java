@@ -1,6 +1,9 @@
+/**
+ * author - 2021S2_REG_WE_64
+ *
+ */
 package com.hackerthon.model;
 
-/*  2021S2_REG_WE_64  */
 
 public class Employee {
 
