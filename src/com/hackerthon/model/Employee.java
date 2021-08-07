@@ -64,27 +64,27 @@ public class Employee {
 	{
 		this.facultyName = facultyName;
 	}
-
+	/** implementing getters for  department */
 	public String getDepartment()
 	{
 		return department;
 	}
-
+	/** implementing setters for department */
 	public void setDepartment(String department)
 	{
 		this.department = department;
 	}
-
+	/** implementing getters for designation */
 	public String getDesignation()
 	{
 		return designation;
 	}
-
+	/** implementing setters for designation */
 	public void setDesignation(String designation)
 	{
 		this.designation = designation;
 	}
-
+	/** override the toString method */
 	@Override
 	public String toString() {
 		
