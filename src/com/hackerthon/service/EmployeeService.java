@@ -9,8 +9,8 @@ import java.sql.Statement;
 
 import com.hackerthon.model.Employee;
 import com.hackerthon.common.CommonUtil;
-import com.hackerthon.common.c2;
-import com.hackerthon.common.c3;
+import com.hackerthon.common.QueryUtil;
+import com.hackerthon.common.TransformUtil;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -28,8 +28,8 @@ public class EmployeeService extends CommonUtil {
 	public EmployeeService() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			c = DriverManager.getConnection(p.getProperty("url"), p.getProperty("username"),
-					p.getProperty("password"));
+			c = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
+					properties.getProperty("password"));
 		} catch (Exception e) {
 		} 
 	}
@@ -37,9 +37,9 @@ public class EmployeeService extends CommonUtil {
 	public void EMPLOEESFROMXML() {
 
 		try {
-			int s = c3.XMLXPATHS().size();
+			int s = TransformUtil.XMLXPATHS().size();
 			for (int i = 0; i < s; i++) {
-				Map<String, String> l = c3.XMLXPATHS().get(i);
+				Map<String, String> l = TransformUtil.XMLXPATHS().get(i);
 				Employee EMPLOYEE = new Employee();
 				EMPLOYEE.setEmployeeId(l.get("XpathEmployeeIDKey"));
 				EMPLOYEE.setFullName(l.get("XpathEmployeeNameKey"));
@@ -57,15 +57,15 @@ public class EmployeeService extends CommonUtil {
 	public void eMPLOYEEtABLEcREATE() {
 		try {
 			s = c.createStatement();
-			s.executeUpdate(c2.Q("q2"));
-			s.executeUpdate(c2.Q("q1"));
+			s.executeUpdate(QueryUtil.queryByID("q2"));
+			s.executeUpdate(QueryUtil.queryByID("q1"));
 		} catch (Exception e) {
 		}
 	}
 
 	public void eMPLOYEESaDD() {
 		try {
-			ps = c.prepareStatement(c2.Q("q3"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q3"));
 			c.setAutoCommit(false);
 			for(int i = 0; i < el.size(); i++){
 				Employee e = el.get(i);
@@ -87,7 +87,7 @@ public class EmployeeService extends CommonUtil {
 
 		Employee e = new Employee();
 		try {
-			ps = c.prepareStatement(c2.Q("q4"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q4"));
 			ps.setString(1, eid);
 			ResultSet R = ps.executeQuery();
 			while (R.next()) {
@@ -108,7 +108,7 @@ public class EmployeeService extends CommonUtil {
 	public void EMPLOYEEDELETE(String eid) {
 
 		try {
-			ps = c.prepareStatement(c2.Q("q6"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q6"));
 			ps.setString(1, eid);
 			ps.executeUpdate();
 		} catch (Exception e) {
@@ -120,7 +120,7 @@ public class EmployeeService extends CommonUtil {
 
 		ArrayList<Employee> l = new ArrayList<Employee>();
 		try {
-			ps = c.prepareStatement(c2.Q("q5"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q5"));
 			ResultSet r = ps.executeQuery();
 			while (r.next()) {
 				Employee e = new Employee();

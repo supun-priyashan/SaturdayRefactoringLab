@@ -1,7 +1,7 @@
 package com.hackerthon.main;
 
 import com.hackerthon.service.EmployeeService;
-import com.hackerthon.common.c3;
+import com.hackerthon.common.TransformUtil;
 
 public class Main {
 
@@ -12,7 +12,7 @@ public class Main {
 
 		EmployeeService employeeService = new EmployeeService();
 		try {
-			c3.rEQUESTtRANSFORM();
+			TransformUtil.rEQUESTtRANSFORM();
 			employeeService.EMPLOEESFROMXML();
 			employeeService.eMPLOYEEtABLEcREATE();
 			employeeService.eMPLOYEESaDD();
