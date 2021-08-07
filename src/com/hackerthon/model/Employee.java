@@ -27,39 +27,39 @@ public class Employee {
 	}
 
 	//implementing getters and setters
-
+	/** implementing getters for employeeID */
 	public String getEmployeeId() {
 		return employeeId;
 	}
 
-
+	/** implementing setters for employeeID */
 	public void setEmployeeId(String employeeID) {
 		employeeId = employeeID;
 	}
-
+	/** implementing getters for full name */
 	public String getFullName() {
 		return fullName;
 	}
-
+	/** implementing setters for full name */
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-
+	/** implementing getters for address */
 	public String getAddress()
 	{
 		return address;
 	}
-
+	/** implementing setters for address */
 	public void setAddress(String address)
 	{
 		this.address = address;
 	}
-
+	/** implementing getters for faculty name */
 	public String getFacultyName()
 	{
 		return facultyName;
 	}
-
+	/** implementing setters for faculty name */
 	public void setFacultyName(String facultyName)
 	{
 		this.facultyName = facultyName;
