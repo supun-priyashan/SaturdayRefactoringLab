@@ -29,7 +29,7 @@ public class CommonConstants {
 	public static final String EMPLOYEE_FACULTY_KEY="]/FacultyName/text()";
 	public static final String EMPLOYEE_DEPARTMENT_KEY="]/Department/text()";
 	public static final String EMPLOYEE_DESIGNATION_KEY="]/Designation/text()";
-	public static final String EMPLOYEE_ADRESS_KEY="]/EmployeeFullAddress/text()";
+	public static final String EMPLOYEE_ADDRESS_KEY="]/EmployeeFullAddress/text()";
 
 
 
