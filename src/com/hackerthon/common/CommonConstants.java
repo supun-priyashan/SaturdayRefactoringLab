@@ -4,6 +4,10 @@
  */
 package com.hackerthon.common;
 
+/**
+ * author - 2021S2_REG_WE_64
+ *
+ */
 public class CommonConstants {
     public static final String CONFIG_PROPERTIES="../config/config.properties";
 

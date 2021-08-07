@@ -1,6 +1,6 @@
 Group ID:  2021S2_REG_WE_64
 
-Group Members Contribution:
+Group Members and Contribution:
 
 Dilitha Ranjuna G.P - IT19156484 - 100%
 

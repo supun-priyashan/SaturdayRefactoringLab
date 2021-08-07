@@ -4,6 +4,11 @@
  */
 package com.hackerthon.service;
 
+/**
+ * author - 2021S2_REG_WE_64
+ * This is the service class
+ */
+
 import java.sql.*;
 
 import com.hackerthon.common.CommonConstants;
@@ -29,6 +34,17 @@ public class EmployeeService extends CommonUtil {
 
 	private static final Logger log = Logger.getLogger(EmployeeService.class.getName());
 
+	/**
+	 * EmployeeService constructor
+	 *
+	 * @throws ClassNotFoundException
+	 * 				-Thrown when an application tries to load in a class through itsstring name using:
+	 * 				�The forName method in class Class.
+	 *				�The findSystemClass method in class ClassLoader .
+	 *				�The loadClass method in class ClassLoader.
+	 *@throws SQLException
+	 *				-An exception that provides information on a database accesserror or other errors.
+	 */
 	public EmployeeService() {
 
 		try {
@@ -42,6 +58,12 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
+	/**
+	 * employeeFromXML
+	 *
+	 *@throws SQLException
+	 *				-An exception that provides information on a database access error or other errors.
+	 */
 	public void employeesFromXML() {
 
 		try {
@@ -67,6 +89,9 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
+	/**
+	 *
+	 */
 	public void createEmployeeTable() {
 		try {
 			statement = connection.createStatement();
