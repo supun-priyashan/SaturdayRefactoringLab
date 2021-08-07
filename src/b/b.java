@@ -17,29 +17,29 @@ public class b {
 	public String getFullName() {
 		return fullName;
 	}
-	public void fULLnAME(String fullName) {
-		nAMEfULL = fullName;
+	public void fullName(String fullName) {
+		fullName = fullName;
 	}
-	public String aDDRESSgET() {
-		return aDDRESS;
+	public String getAddress() {
+		return address;
 	}
-	public void aDDRESS(String address) {
-		aDDRESS = address;
+	public void address(String address) {
+		address = address;
 	}
-	public String fACULTYnAMEgET() {
-		return fACULTYnAME;
+	public String getFacultyName() {
+		return facultyName;
 	}
-	public void fACULTYNAME(String facultyName) {
-		fACULTYnAME = facultyName;
+	public void facultyName(String facultyName) {
+		facultyName = facultyName;
 	}
-	public String dEPARTMENTgET() {
-		return dEPARTMENT;
+	public String getDepartment() {
+		return department;
 	}
-	public void dEPARTMENT(String department) {
-		dEPARTMENT = department;
+	public void department(String department) {
+		department = department;
 	}
-	public String dESIGNATIONgET() {
-		return dESIGNATION;
+	public String getDesignation() {
+		return designation;
 	}
 	public void dESIGNATION(String designation) {
 		dESIGNATION = designation;
