@@ -97,68 +97,74 @@ public class EmployeeService extends CommonUtil {
 		}
 	}
 
-	public void getEmployeByID(String employeeID) {
+	public void getEmployeeByID(String employeeID) {
 
 		Employee employee = new Employee();
 		try {
 			preparedStatement = connection.prepareStatement(QueryUtil.queryByID("q4"));
 			preparedStatement.setString(1, employeeID);
-			ResultSet R = preparedStatement.executeQuery();
-			while (R.next()) {
-				employee.setEmployeeId(R.getString(1));
-				employee.setFullName(R.getString(2));
-				employee.setAddress(R.getString(3));
-				employee.setFacultyName(R.getString(4));
-				employee.setDepartment(R.getString(5));
-				employee.setDesignation(R.getString(6));
+			ResultSet result = preparedStatement.executeQuery();
+			while (result.next()) {
+				setEmployee(result, employee);
 			}
-			ArrayList<Employee> l = new ArrayList<Employee>();
-			l.add(employee);
-			eMPLOYEEoUTPUT(l);
-		} catch (Exception ex) {
+			ArrayList<Employee> employeeList = new ArrayList<Employee>();
+			employeeList.add(employee);
+			employeeOutput(employeeList);
+		} catch (SQLException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} catch (Exception e){
+			log.log(Level.SEVERE, e.getMessage());
 		}
 	}
 
-	public void EMPLOYEEDELETE(String eid) {
+	public void employeeDelete(String eid) {
 
 		try {
 			preparedStatement = connection.prepareStatement(QueryUtil.queryByID("q6"));
 			preparedStatement.setString(1, eid);
 			preparedStatement.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} catch (Exception e){
+			log.log(Level.SEVERE, e.getMessage());
 		}
 	}
 
-	public void eMPLOYEEdISPLAY() {
+	public void displayEmployees() {
 
-		ArrayList<Employee> l = new ArrayList<Employee>();
+		ArrayList<Employee> employeeList = new ArrayList<Employee>();
 		try {
 			preparedStatement = connection.prepareStatement(QueryUtil.queryByID("q5"));
-			ResultSet r = preparedStatement.executeQuery();
-			while (r.next()) {
-				Employee e = new Employee();
-				e.setEmployeeId(r.getString(1));
-				e.setFullName(r.getString(2));
-				e.setAddress(r.getString(3));
-				e.setFacultyName(r.getString(4));
-				e.setDepartment(r.getString(5));
-				e.setDesignation(r.getString(6));
-				l.add(e);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Employee employee = new Employee();
+				setEmployee(resultSet, employee);
+				employeeList.add(employee);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
+			log.log(Level.SEVERE, e.getMessage());
+		} catch (Exception e){
+			log.log(Level.SEVERE, e.getMessage());
 		}
-		eMPLOYEEoUTPUT(l);
+		employeeOutput(employeeList);
 	}
-	
-	public void eMPLOYEEoUTPUT(ArrayList<Employee> l){
+
+	private void setEmployee(ResultSet resultSet, Employee employee) throws SQLException {
+		employee.setEmployeeId(resultSet.getString(1));
+		employee.setFullName(resultSet.getString(2));
+		employee.setAddress(resultSet.getString(3));
+		employee.setFacultyName(resultSet.getString(4));
+		employee.setDepartment(resultSet.getString(5));
+		employee.setDesignation(resultSet.getString(6));
+	}
+
+	public void employeeOutput(ArrayList<Employee> employeeArrayList){
 		
 		System.out.println("Employee ID" + "\t\t" + "Full Name" + "\t\t" + "Address" + "\t\t" + "Faculty Name" + "\t\t"
 				+ "Department" + "\t\t" + "Designation" + "\n");
 		System.out
 				.println("================================================================================================================");
-		for(int i = 0; i < l.size(); i++){
-			Employee e = l.get(i);
+		for(Employee e:employeeArrayList){
 			System.out.println(e.getEmployeeId() + "\t" + e.getFullName() + "\t\t"
 					+ e.getAddress() + "\t" + e.getFacultyName() + "\t" + e.getDepartment() + "\t"
 					+ e.getDesignation() + "\n");

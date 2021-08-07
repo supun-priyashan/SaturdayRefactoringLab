@@ -24,7 +24,7 @@ public class Main {
 			employeeService.addEmployees();
 //			employeeService.eMPLOYEEGETBYID("EMP10004");
 //			employeeService.EMPLOYEEDELETE("EMP10001");
-			employeeService.eMPLOYEEdISPLAY();
+			employeeService.displayEmployees();
 		} catch (Exception e) {
 			log.log(Level.SEVERE, e.getMessage());
 		}
