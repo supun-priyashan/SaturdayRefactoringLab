@@ -7,16 +7,26 @@ import org.w3c.dom.Element;
 
 public class QueryUtil extends CommonUtil {
 	
-	public static String Q(String id) throws Exception {
-		NodeList n; Element e = null;
-		n = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-				.parse(new File("src/e/EmployeeQuery.xml"))
-				.getElementsByTagName("query");
-		for (int x = 0; x < n.getLength(); x++) {
-			e = (Element) n.item(x);
-			if (e.getAttribute("id").equals(id))
-				break;
+	public static String queryByID(String id) throws Exception {
+
+		NodeList nodeList;
+		Element element = null;
+
+		try {
+			nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+					.parse(new File("src/e/EmployeeQuery.xml"))
+					.getElementsByTagName("query");
+
+			for (int x = 0; x < nodeList.getLength(); x++) {
+				element = (Element) nodeList.item(x);
+				if (element.getAttribute("id").equals(id))
+					break;
+			}
 		}
-		return e.getTextContent().trim();
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return element.getTextContent().trim();
 	}
 }

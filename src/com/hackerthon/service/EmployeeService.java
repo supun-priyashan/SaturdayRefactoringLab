@@ -28,8 +28,8 @@ public class EmployeeService extends CommonUtil {
 	public EmployeeService() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			c = DriverManager.getConnection(p.getProperty("url"), p.getProperty("username"),
-					p.getProperty("password"));
+			c = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
+					properties.getProperty("password"));
 		} catch (Exception e) {
 		} 
 	}
@@ -57,15 +57,15 @@ public class EmployeeService extends CommonUtil {
 	public void eMPLOYEEtABLEcREATE() {
 		try {
 			s = c.createStatement();
-			s.executeUpdate(QueryUtil.Q("q2"));
-			s.executeUpdate(QueryUtil.Q("q1"));
+			s.executeUpdate(QueryUtil.queryByID("q2"));
+			s.executeUpdate(QueryUtil.queryByID("q1"));
 		} catch (Exception e) {
 		}
 	}
 
 	public void eMPLOYEESaDD() {
 		try {
-			ps = c.prepareStatement(QueryUtil.Q("q3"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q3"));
 			c.setAutoCommit(false);
 			for(int i = 0; i < el.size(); i++){
 				Employee e = el.get(i);
@@ -87,7 +87,7 @@ public class EmployeeService extends CommonUtil {
 
 		Employee e = new Employee();
 		try {
-			ps = c.prepareStatement(QueryUtil.Q("q4"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q4"));
 			ps.setString(1, eid);
 			ResultSet R = ps.executeQuery();
 			while (R.next()) {
@@ -108,7 +108,7 @@ public class EmployeeService extends CommonUtil {
 	public void EMPLOYEEDELETE(String eid) {
 
 		try {
-			ps = c.prepareStatement(QueryUtil.Q("q6"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q6"));
 			ps.setString(1, eid);
 			ps.executeUpdate();
 		} catch (Exception e) {
@@ -120,7 +120,7 @@ public class EmployeeService extends CommonUtil {
 
 		ArrayList<Employee> l = new ArrayList<Employee>();
 		try {
-			ps = c.prepareStatement(QueryUtil.Q("q5"));
+			ps = c.prepareStatement(QueryUtil.queryByID("q5"));
 			ResultSet r = ps.executeQuery();
 			while (r.next()) {
 				Employee e = new Employee();
