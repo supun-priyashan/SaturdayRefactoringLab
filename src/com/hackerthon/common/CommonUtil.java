@@ -12,7 +12,7 @@ public class CommonUtil {
 
 	static {
 		try {
-			p.load(c2.class.getResourceAsStream("../config/config.properties"));
+			p.load(QueryUtil.class.getResourceAsStream("../config/config.properties"));
 		} catch (Exception e) {
 			log.log(Level.SEVERE,e.getMessage());
 		}

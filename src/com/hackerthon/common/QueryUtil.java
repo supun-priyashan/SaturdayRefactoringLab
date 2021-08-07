@@ -5,7 +5,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 
-public class c2 extends CommonUtil {
+public class QueryUtil extends CommonUtil {
 	
 	public static String Q(String id) throws Exception {
 		NodeList n; Element e = null;
