@@ -22,8 +22,8 @@ public class Main {
 			employeeService.employeesFromXML();
 			employeeService.createEmployeeTable();
 			employeeService.addEmployees();
-//			employeeService.eMPLOYEEGETBYID("EMP10004");
-//			employeeService.EMPLOYEEDELETE("EMP10001");
+			employeeService.getEmployeeByID("EMP10004");
+			employeeService.getEmployeeByID("EMP10001");
 			employeeService.displayEmployees();
 		} catch (Exception e) {
 			log.log(Level.SEVERE, e.getMessage());
