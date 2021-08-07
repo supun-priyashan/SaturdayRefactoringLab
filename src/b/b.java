@@ -11,11 +11,11 @@ public class b {
 	public String getEmployeeID() {
 		return employeeID;
 	}
-	public void eMPLOYEEiD(String employeeID) {
-		iDeMPLOYEE = employeeID;
+	public void employeeID(String employeeID) {
+		employeeID = employeeID;
 	}
-	public String fULLnAMEgET() {
-		return nAMEfULL;
+	public String getFullName() {
+		return fullName;
 	}
 	public void fULLnAME(String fullName) {
 		nAMEfULL = fullName;
